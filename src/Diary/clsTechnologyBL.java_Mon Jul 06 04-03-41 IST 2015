@@ -1,0 +1,37 @@
+package javaguitemplate;
+
+import org.jdesktop.swingx.JXTable;
+import myframework.pkgDataBase.ClsHSQLDBDataBase;
+import myframework.pkgGUIContainers.ClsGUIContainers;
+
+class clsTechnologyBL{
+
+  ClsHSQLDBDataBase objDBHSQ;
+  ClsGUIContainers objGUIContainer;
+
+  JXTable TblView;
+  public clsTechnologyBL(){
+      objDBHSQ = ClsHSQLDBDataBase.self(FrmMain.self().txtLogs);
+      objGUIContainer = ClsGUIContainers.self(FrmMain.self().txtLogs);
+  }
+
+  public void fnViewData(){
+      String strQuery="";
+      objGUIContainer.fnFillJTable(TblView, objDBHSQ.fnSelectQuery(strQuery));
+      TblView.packAll();
+  }
+
+}
+
+  public void fnSaveNewData(){
+      String strQuery="";
+  }
+
+}
+
+  public void fnSaveEditedData(){
+      String strQuery="";
+  }
+
+}
+
